@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <!-- Background rounded square -->
+  <rect width="64" height="64" rx="10" fill="#0d2546"/>
+
+  <!-- Three pillars -->
+  <g>
+    <!-- Pillar 1 -->
+    <rect x="9"  y="13" width="14" height="3" fill="#c9a849"/>
+    <rect x="11" y="16" width="10" height="32" fill="#d4b674"/>
+    <rect x="9"  y="48" width="14" height="3" fill="#c9a849"/>
+
+    <!-- Pillar 2 (taller, centered) -->
+    <rect x="25" y="13" width="14" height="3" fill="#c9a849"/>
+    <rect x="27" y="16" width="10" height="32" fill="#d4b674"/>
+    <rect x="25" y="48" width="14" height="3" fill="#c9a849"/>
+
+    <!-- Pillar 3 -->
+    <rect x="41" y="13" width="14" height="3" fill="#c9a849"/>
+    <rect x="43" y="16" width="10" height="32" fill="#d4b674"/>
+    <rect x="41" y="48" width="14" height="3" fill="#c9a849"/>
+  </g>
+
+  <!-- Subtle fluting lines on pillars -->
+  <g stroke="#a67e2c" stroke-width="0.4" opacity="0.6">
+    <line x1="14" y1="16" x2="14" y2="48"/>
+    <line x1="17" y1="16" x2="17" y2="48"/>
+    <line x1="20" y1="16" x2="20" y2="48"/>
+    <line x1="30" y1="16" x2="30" y2="48"/>
+    <line x1="33" y1="16" x2="33" y2="48"/>
+    <line x1="36" y1="16" x2="36" y2="48"/>
+    <line x1="46" y1="16" x2="46" y2="48"/>
+    <line x1="49" y1="16" x2="49" y2="48"/>
+    <line x1="52" y1="16" x2="52" y2="48"/>
+  </g>
+</svg>
