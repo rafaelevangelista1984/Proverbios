@@ -363,15 +363,12 @@
   /* ═══════════════ PILLARS GRID ═══════════════ */
   .pillars-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 14px;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
     padding: 6px 0;
   }
 
   @media (min-width: 540px) {
-    .pillars-grid { grid-template-columns: repeat(4, 1fr); gap: 16px; }
-  }
-  @media (min-width: 720px) {
     .pillars-grid { grid-template-columns: repeat(5, 1fr); gap: 18px; }
   }
 
@@ -984,7 +981,7 @@
 
   <section class="tab-content" id="tab-pillars">
     <div class="section-head">
-      <h2>Os Quinze Pilares</h2>
+      <h2>Os Dez Pilares</h2>
       <p>toque em uma coluna para ler os versículos</p>
     </div>
     <div class="pillars-grid" id="pillarsGrid"></div>
@@ -1046,7 +1043,7 @@
 
 <script>
 /* ════════════════════════════════════════════════
-   DATA — 15 PILLARS, EACH WITH VERSES + NT ECHO
+   DATA — 10 PILLARS (CONSOLIDATED), WITH VERSES + NT ECHO
    ════════════════════════════════════════════════ */
 const PILLARS = [
   {
@@ -1114,7 +1111,33 @@ const PILLARS = [
     ]
   },
   {
-    id: 'filhos', numeral: 'IV',
+    id: 'casamento', numeral: 'IV',
+    name: 'Casamento',
+    full: 'Casamento e Fidelidade',
+    subtitle: 'sobre o pacto conjugal e a pureza',
+    color: '#a64453',
+    verses: [
+      { ref: 'Pv 5:3-4', text: 'Porque os lábios da mulher estranha destilam favos de mel, e o seu paladar é mais macio do que o azeite. Porém o seu fim é amargoso como o absinto, agudo como a espada de dois fios.', nt: '1 Co 6:18' },
+      { ref: 'Pv 5:8',   text: 'Afasta dela o teu caminho, e não te chegues à porta da sua casa.', nt: '2 Tm 2:22' },
+      { ref: 'Pv 5:18-19', text: 'Seja bendito o teu manancial, e alegra-te com a mulher da tua mocidade. Como cerva amorosa e gazela graciosa, saciem-te os seus seios em todo o tempo; e pelo seu amor sê atraído perpetuamente.', nt: 'Hb 13:4' },
+      { ref: 'Pv 5:21',  text: 'Pois os caminhos do homem estão perante os olhos do Senhor, e ele pesa todas as suas veredas.', nt: 'Hb 4:13' },
+      { ref: 'Pv 6:25',  text: 'Não cobices no teu coração a sua formosura, nem te prendas com os seus olhos.', nt: 'Mt 5:27-28' },
+      { ref: 'Pv 6:27-28', text: 'Porventura tomará alguém fogo no seu seio, sem que suas vestes se queimem? Ou andará alguém sobre as brasas, sem que se queimem os seus pés?', nt: '1 Co 6:18' },
+      { ref: 'Pv 6:32',  text: 'O que adultera com uma mulher é falto de entendimento; destrói a sua alma, o que tal faz.', nt: '1 Co 6:9-10' },
+      { ref: 'Pv 7:25-27', text: 'Não se desvie para os seus caminhos o teu coração, e não andes perdido nas suas veredas. Porque a muitos feridos derrubou; e são muitíssimos os que por ela foram mortos. Caminho do inferno é a sua casa; o qual desce às câmaras da morte.', nt: '1 Pe 5:8' },
+      { ref: 'Pv 12:4',  text: 'A mulher virtuosa é a coroa do seu marido, mas a que o envergonha é como apodrecimento nos seus ossos.', nt: '1 Co 11:7' },
+      { ref: 'Pv 18:22', text: 'O que acha uma mulher acha o bem, e alcança a benevolência do Senhor.', nt: 'Ef 5:25' },
+      { ref: 'Pv 19:14', text: 'A casa e os bens são herança dos pais; mas do Senhor vem a esposa prudente.', nt: '1 Pe 3:1-2' },
+      { ref: 'Pv 21:9',  text: 'Melhor é morar num canto do eirado, do que com a mulher rixosa, e isso em casa em que mais companhia haja.' },
+      { ref: 'Pv 27:15-16', text: 'O gotejar contínuo no dia de grande chuva, e a mulher rixosa são semelhantes. Tentar detê-la é como deter o vento, ou agarrar azeite com a mão direita.' },
+      { ref: 'Pv 31:10', text: 'Mulher virtuosa, quem a achará? O seu valor muito excede ao de rubins.', nt: '1 Pe 3:3-4' },
+      { ref: 'Pv 31:11', text: 'O coração do seu marido está nela confiado; assim ele não necessitará de despojo.', nt: 'Tt 2:4-5' },
+      { ref: 'Pv 31:28', text: 'Levantam-se seus filhos e chamam-lhe bem-aventurada; seu marido também, e ele a louva.' },
+      { ref: 'Pv 31:30', text: 'Enganosa é a graça, e vã a formosura, mas a mulher que teme ao Senhor essa será louvada.', nt: '1 Pe 3:3-4' }
+    ]
+  },
+  {
+    id: 'filhos', numeral: 'V',
     name: 'Filhos',
     full: 'Filhos, Educação e Disciplina',
     subtitle: 'sobre criar e instruir os pequenos',
@@ -1133,38 +1156,24 @@ const PILLARS = [
     ]
   },
   {
-    id: 'casamento', numeral: 'V',
-    name: 'Casamento',
-    full: 'Casamento e Mulher Virtuosa',
-    subtitle: 'sobre o pacto entre marido e esposa',
-    color: '#a64453',
+    id: 'lingua', numeral: 'VI',
+    name: 'Língua',
+    full: 'A Língua e o Poder das Palavras',
+    subtitle: 'sobre falar, calar e escutar',
+    color: '#1f4d7a',
     verses: [
-      { ref: 'Pv 5:18-19', text: 'Seja bendito o teu manancial, e alegra-te com a mulher da tua mocidade. Como cerva amorosa e gazela graciosa, saciem-te os seus seios em todo o tempo; e pelo seu amor sê atraído perpetuamente.', nt: 'Hb 13:4' },
-      { ref: 'Pv 12:4',  text: 'A mulher virtuosa é a coroa do seu marido, mas a que o envergonha é como apodrecimento nos seus ossos.', nt: '1 Co 11:7' },
-      { ref: 'Pv 18:22', text: 'O que acha uma mulher acha o bem, e alcança a benevolência do Senhor.', nt: 'Ef 5:25' },
-      { ref: 'Pv 19:14', text: 'A casa e os bens são herança dos pais; mas do Senhor vem a esposa prudente.', nt: '1 Pe 3:1-2' },
-      { ref: 'Pv 21:9',  text: 'Melhor é morar num canto do eirado, do que com a mulher rixosa, e isso em casa em que mais companhia haja.' },
-      { ref: 'Pv 27:15-16', text: 'O gotejar contínuo no dia de grande chuva, e a mulher rixosa são semelhantes. Tentar detê-la é como deter o vento, ou agarrar azeite com a mão direita.' },
-      { ref: 'Pv 31:10', text: 'Mulher virtuosa, quem a achará? O seu valor muito excede ao de rubins.', nt: '1 Pe 3:3-4' },
-      { ref: 'Pv 31:11', text: 'O coração do seu marido está nela confiado; assim ele não necessitará de despojo.', nt: 'Tt 2:4-5' },
-      { ref: 'Pv 31:28', text: 'Levantam-se seus filhos e chamam-lhe bem-aventurada; seu marido também, e ele a louva.' },
-      { ref: 'Pv 31:30', text: 'Enganosa é a graça, e vã a formosura, mas a mulher que teme ao Senhor essa será louvada.', nt: '1 Pe 3:3-4' }
-    ]
-  },
-  {
-    id: 'pureza', numeral: 'VI',
-    name: 'Pureza',
-    full: 'Pureza Sexual',
-    subtitle: 'sobre evitar o adultério e a sedução',
-    color: '#5d2670',
-    verses: [
-      { ref: 'Pv 5:3-4', text: 'Porque os lábios da mulher estranha destilam favos de mel, e o seu paladar é mais macio do que o azeite. Porém o seu fim é amargoso como o absinto, agudo como a espada de dois fios.', nt: '1 Co 6:18' },
-      { ref: 'Pv 5:8',   text: 'Afasta dela o teu caminho, e não te chegues à porta da sua casa.', nt: '2 Tm 2:22' },
-      { ref: 'Pv 5:21',  text: 'Pois os caminhos do homem estão perante os olhos do Senhor, e ele pesa todas as suas veredas.', nt: 'Hb 4:13' },
-      { ref: 'Pv 6:25',  text: 'Não cobices no teu coração a sua formosura, nem te prendas com os seus olhos.', nt: 'Mt 5:27-28' },
-      { ref: 'Pv 6:27-28', text: 'Porventura tomará alguém fogo no seu seio, sem que suas vestes se queimem? Ou andará alguém sobre as brasas, sem que se queimem os seus pés?', nt: '1 Co 6:18' },
-      { ref: 'Pv 6:32',  text: 'O que adultera com uma mulher é falto de entendimento; destrói a sua alma, o que tal faz.', nt: '1 Co 6:9-10' },
-      { ref: 'Pv 7:25-27', text: 'Não se desvie para os seus caminhos o teu coração, e não andes perdido nas suas veredas. Porque a muitos feridos derrubou; e são muitíssimos os que por ela foram mortos. Caminho do inferno é a sua casa; o qual desce às câmaras da morte.', nt: '1 Pe 5:8' }
+      { ref: 'Pv 10:19', text: 'Na multidão de palavras não falta transgressão, mas o que modera os seus lábios é prudente.', nt: 'Tg 3:2' },
+      { ref: 'Pv 11:13', text: 'O que anda mexericando descobre o segredo, mas o fiel de espírito encobre o negócio.', nt: '1 Tm 5:13' },
+      { ref: 'Pv 12:18', text: 'Há alguns que falam palavras como pontas de espada, mas a língua dos sábios é saúde.', nt: 'Tg 3:5-6' },
+      { ref: 'Pv 15:1',  text: 'A resposta branda desvia o furor, mas a palavra dura suscita a ira.', nt: 'Tg 1:19-20' },
+      { ref: 'Pv 15:23', text: 'O homem alegra-se na resposta da sua boca, e a palavra a seu tempo, quão boa é!', nt: 'Cl 4:6' },
+      { ref: 'Pv 16:24', text: 'Palavras suaves são como favos de mel, doces para a alma, e saúde para os ossos.', nt: 'Ef 4:29' },
+      { ref: 'Pv 17:27', text: 'O que possui o conhecimento poupa as suas palavras, e o homem de entendimento é de precioso espírito.', nt: 'Tg 1:19' },
+      { ref: 'Pv 17:28', text: 'Até o tolo, quando se cala, será reputado por sábio; e o que cerrar os seus lábios por entendido.', nt: 'Tg 3:13' },
+      { ref: 'Pv 18:13', text: 'O que responde antes de ouvir, comete estultícia e vergonha.', nt: 'Tg 1:19' },
+      { ref: 'Pv 18:21', text: 'A morte e a vida estão no poder da língua; e aquele que a ama comerá do seu fruto.', nt: 'Mt 12:36-37' },
+      { ref: 'Pv 25:11', text: 'Como maçãs de ouro em salvas de prata, assim é a palavra dita a seu tempo.', nt: 'Cl 4:6' },
+      { ref: 'Pv 26:20', text: 'Sem lenha, o fogo se apagará; e não havendo intrigante, cessará a contenda.', nt: 'Tg 3:5-6' }
     ]
   },
   {
@@ -1186,71 +1195,56 @@ const PILLARS = [
     ]
   },
   {
-    id: 'lingua', numeral: 'VIII',
-    name: 'Língua',
-    full: 'A Língua e o Poder das Palavras',
-    subtitle: 'sobre falar, calar e escutar',
-    color: '#1f4d7a',
-    verses: [
-      { ref: 'Pv 10:19', text: 'Na multidão de palavras não falta transgressão, mas o que modera os seus lábios é prudente.', nt: 'Tg 3:2' },
-      { ref: 'Pv 11:13', text: 'O que anda mexericando descobre o segredo, mas o fiel de espírito encobre o negócio.', nt: '1 Tm 5:13' },
-      { ref: 'Pv 12:18', text: 'Há alguns que falam palavras como pontas de espada, mas a língua dos sábios é saúde.', nt: 'Tg 3:5-6' },
-      { ref: 'Pv 15:1',  text: 'A resposta branda desvia o furor, mas a palavra dura suscita a ira.', nt: 'Tg 1:19-20' },
-      { ref: 'Pv 15:23', text: 'O homem alegra-se na resposta da sua boca, e a palavra a seu tempo, quão boa é!', nt: 'Cl 4:6' },
-      { ref: 'Pv 16:24', text: 'Palavras suaves são como favos de mel, doces para a alma, e saúde para os ossos.', nt: 'Ef 4:29' },
-      { ref: 'Pv 17:27', text: 'O que possui o conhecimento poupa as suas palavras, e o homem de entendimento é de precioso espírito.', nt: 'Tg 1:19' },
-      { ref: 'Pv 17:28', text: 'Até o tolo, quando se cala, será reputado por sábio; e o que cerrar os seus lábios por entendido.', nt: 'Tg 3:13' },
-      { ref: 'Pv 18:13', text: 'O que responde antes de ouvir, comete estultícia e vergonha.', nt: 'Tg 1:19' },
-      { ref: 'Pv 18:21', text: 'A morte e a vida estão no poder da língua; e aquele que a ama comerá do seu fruto.', nt: 'Mt 12:36-37' },
-      { ref: 'Pv 25:11', text: 'Como maçãs de ouro em salvas de prata, assim é a palavra dita a seu tempo.', nt: 'Cl 4:6' },
-      { ref: 'Pv 26:20', text: 'Sem lenha, o fogo se apagará; e não havendo intrigante, cessará a contenda.', nt: 'Tg 3:5-6' }
-    ]
-  },
-  {
-    id: 'humildade', numeral: 'IX',
-    name: 'Humildade',
-    full: 'Orgulho e Humildade',
-    subtitle: 'sobre a queda do altivo e a honra do humilde',
-    color: '#7a3a1f',
-    verses: [
-      { ref: 'Pv 11:2',  text: 'Em vindo a soberba, virá também a afronta; mas com os humildes está a sabedoria.', nt: '1 Pe 5:5' },
-      { ref: 'Pv 13:10', text: 'Da soberba só provém a contenda, mas com os que se aconselham se acha a sabedoria.', nt: 'Fp 2:3' },
-      { ref: 'Pv 16:5',  text: 'Abominação é ao Senhor todo o altivo de coração; ainda que ele junte mão à mão, não ficará impune.', nt: 'Lc 18:14' },
-      { ref: 'Pv 16:18', text: 'A soberba precede a ruína, e a altivez do espírito precede a queda.', nt: '1 Co 10:12' },
-      { ref: 'Pv 16:19', text: 'Melhor é ser humilde de espírito com os mansos, do que repartir o despojo com os soberbos.', nt: 'Mt 5:3' },
-      { ref: 'Pv 18:12', text: 'Antes de ser quebrantado eleva-se o coração do homem; e diante da honra vai a humildade.', nt: 'Lc 14:11' },
-      { ref: 'Pv 22:4',  text: 'O galardão da humildade e o temor do Senhor são riquezas, honra e vida.', nt: '1 Pe 5:6' },
-      { ref: 'Pv 27:2',  text: 'Louve-te outro, e não a tua boca; o estranho, e não os teus lábios.', nt: '2 Co 10:18' },
-      { ref: 'Pv 29:23', text: 'A soberba do homem o abaterá, mas o humilde de espírito obterá honra.', nt: 'Tg 4:10' }
-    ]
-  },
-  {
-    id: 'ira', numeral: 'X',
-    name: 'Ira',
-    full: 'Ira e Autocontrole',
+    id: 'dominio', numeral: 'VIII',
+    name: 'Domínio Próprio',
+    full: 'Domínio Próprio — Orgulho, Ira e Excessos',
     subtitle: 'sobre dominar o próprio espírito',
     color: '#9c2a1f',
     verses: [
+      { ref: 'Pv 11:2',  text: 'Em vindo a soberba, virá também a afronta; mas com os humildes está a sabedoria.', nt: '1 Pe 5:5' },
+      { ref: 'Pv 13:10', text: 'Da soberba só provém a contenda, mas com os que se aconselham se acha a sabedoria.', nt: 'Fp 2:3' },
       { ref: 'Pv 14:29', text: 'O longânimo é grande em entendimento, mas o de espírito impaciente assinala a sua loucura.', nt: 'Tg 1:19-20' },
       { ref: 'Pv 15:18', text: 'O homem iracundo suscita contendas, mas o longânimo apazigua a luta.', nt: 'Ef 4:26-27' },
+      { ref: 'Pv 16:5',  text: 'Abominação é ao Senhor todo o altivo de coração; ainda que ele junte mão à mão, não ficará impune.', nt: 'Lc 18:14' },
+      { ref: 'Pv 16:18', text: 'A soberba precede a ruína, e a altivez do espírito precede a queda.', nt: '1 Co 10:12' },
+      { ref: 'Pv 16:19', text: 'Melhor é ser humilde de espírito com os mansos, do que repartir o despojo com os soberbos.', nt: 'Mt 5:3' },
       { ref: 'Pv 16:32', text: 'Melhor é o longânimo do que o valente, e o que domina o seu espírito do que o que toma uma cidade.', nt: 'Gl 5:22-23' },
+      { ref: 'Pv 18:12', text: 'Antes de ser quebrantado eleva-se o coração do homem; e diante da honra vai a humildade.', nt: 'Lc 14:11' },
       { ref: 'Pv 19:11', text: 'O entendimento do homem retém a sua ira, e sua glória é passar sobre a transgressão.', nt: 'Cl 3:13' },
+      { ref: 'Pv 20:1',  text: 'O vinho é escarnecedor, a bebida forte alvoroçadora; e todo aquele que neles errar nunca será sábio.', nt: 'Ef 5:18' },
+      { ref: 'Pv 22:4',  text: 'O galardão da humildade e o temor do Senhor são riquezas, honra e vida.', nt: '1 Pe 5:6' },
+      { ref: 'Pv 23:20-21', text: 'Não estejas entre os beberrões de vinho, nem entre os comilões de carne. Porque o beberrão e o comilão empobrecerão; e a sonolência faz trazer os vestidos rotos.', nt: 'Rm 13:13' },
+      { ref: 'Pv 23:29-30', text: 'Para quem são os ais? Para quem os pesares? Para quem as pelejas? Para quem as queixas? Para quem as feridas sem causa? E para quem os olhos vermelhos? Para os que se demoram perto do vinho.', nt: '1 Co 6:10' },
+      { ref: 'Pv 23:31-32', text: 'Não olhes para o vinho quando se mostra vermelho, quando resplandece no copo e se escoa suavemente. No seu fim morderá como a cobra, e como o basilisco picará.', nt: 'Lc 21:34' },
       { ref: 'Pv 25:28', text: 'Como a cidade derribada, sem muros, assim é o homem que não pode conter o seu espírito.', nt: 'Gl 5:22-23' },
+      { ref: 'Pv 27:2',  text: 'Louve-te outro, e não a tua boca; o estranho, e não os teus lábios.', nt: '2 Co 10:18' },
       { ref: 'Pv 29:11', text: 'Todo o seu espírito profere o tolo, mas o sábio o encobre e reprime.', nt: 'Tg 1:19-20' },
-      { ref: 'Pv 29:22', text: 'O homem iracundo levanta contendas; e o furioso multiplica as transgressões.', nt: 'Ef 4:31' }
+      { ref: 'Pv 29:22', text: 'O homem iracundo levanta contendas; e o furioso multiplica as transgressões.', nt: 'Ef 4:31' },
+      { ref: 'Pv 29:23', text: 'A soberba do homem o abaterá, mas o humilde de espírito obterá honra.', nt: 'Tg 4:10' },
+      { ref: 'Pv 31:4-5', text: 'Não é dos reis, ó Lemuel, não é dos reis beber vinho, nem dos príncipes desejar bebida forte. Para que não bebam, e se esqueçam do estatuto, e pervertam o juízo de todos os aflitos.', nt: '1 Tm 3:3' }
     ]
   },
   {
-    id: 'honestidade', numeral: 'XI',
-    name: 'Honestidade',
-    full: 'Honestidade, Integridade e Justiça',
-    subtitle: 'sobre andar em sinceridade',
-    color: '#2a6b3c',
+    id: 'integridade', numeral: 'IX',
+    name: 'Integridade',
+    full: 'Integridade e Justiça',
+    subtitle: 'sobre o caráter revelado em atos',
+    color: '#4a1f7a',
     verses: [
+      { ref: 'Pv 10:3',  text: 'O Senhor não deixa ter fome a alma do justo, mas a fazenda dos ímpios rejeitará.', nt: 'Mt 6:33' },
       { ref: 'Pv 10:9',  text: 'Quem anda em sinceridade anda seguro, mas o que perverte os seus caminhos será conhecido.', nt: '2 Co 1:12' },
+      { ref: 'Pv 10:24', text: 'O temor dos ímpios virá sobre ele, mas o desejo dos justos Deus lhe cumprirá.', nt: 'Mt 5:6' },
+      { ref: 'Pv 10:28', text: 'A esperança dos justos é alegria, mas a expectação dos ímpios perecerá.', nt: 'Rm 5:5' },
       { ref: 'Pv 11:1',  text: 'Balança enganosa é abominação para o Senhor, mas o peso justo é o seu prazer.', nt: 'Tg 5:1-4' },
       { ref: 'Pv 11:3',  text: 'A sinceridade dos sinceros os guiará, mas a perversidade dos pérfidos os destruirá.', nt: '2 Co 8:21' },
+      { ref: 'Pv 11:8',  text: 'O justo é libertado da angústia, e o ímpio vem em seu lugar.', nt: '2 Pe 2:9' },
+      { ref: 'Pv 11:30', text: 'O fruto do justo é árvore de vida, e o que ganha almas sábio é.', nt: 'Tg 5:20' },
+      { ref: 'Pv 12:7',  text: 'Transtornados serão os ímpios, e não serão mais, mas a casa dos justos permanecerá.', nt: 'Mt 7:24-27' },
       { ref: 'Pv 12:22', text: 'Os lábios mentirosos são abomináveis ao Senhor, mas os que agem fielmente são o seu deleite.', nt: 'Ap 21:8' },
+      { ref: 'Pv 13:9',  text: 'A luz dos justos alegra, mas a lâmpada dos ímpios se apagará.', nt: 'Mt 5:14-16' },
+      { ref: 'Pv 14:11', text: 'A casa dos ímpios se desfará, mas a tenda dos retos florescerá.', nt: 'Mt 7:24-27' },
+      { ref: 'Pv 14:34', text: 'A justiça exalta as nações, mas o pecado é o opróbrio dos povos.', nt: 'Mt 5:13' },
+      { ref: 'Pv 15:29', text: 'Longe está o Senhor dos ímpios, mas escuta a oração dos justos.', nt: 'Tg 5:16' },
       { ref: 'Pv 16:11', text: 'O peso e a balança justos são do Senhor; obra sua são todos os pesos da bolsa.', nt: 'Lc 16:10' },
       { ref: 'Pv 19:1',  text: 'Melhor é o pobre que anda na sua sinceridade do que o perverso de lábios e tolo.', nt: '1 Tm 6:6-8' },
       { ref: 'Pv 20:7',  text: 'O justo anda na sua sinceridade; bem-aventurados serão os seus filhos depois dele.', nt: '1 Tm 3:4' },
@@ -1260,75 +1254,33 @@ const PILLARS = [
     ]
   },
   {
-    id: 'lideranca', numeral: 'XII',
-    name: 'Liderança',
-    full: 'Reis, Governo e Liderança',
-    subtitle: 'sobre quem governa sobre outros',
-    color: '#3a1f7a',
-    verses: [
-      { ref: 'Pv 8:15-16', text: 'Por mim reinam os reis e os príncipes ordenam justiça. Por mim governam os príncipes e os nobres, sim, todos os juízes da terra.', nt: 'Rm 13:1-2' },
-      { ref: 'Pv 14:28', text: 'Na multidão do povo está a magnificência do rei, mas na falta do povo a perturbação do príncipe.' },
-      { ref: 'Pv 16:10', text: 'Nos lábios do rei se acha a sentença divina; em juízo não prevaricará a sua boca.', nt: 'Rm 13:1' },
-      { ref: 'Pv 16:12', text: 'Abominação é para os reis cometerem impiedade, porque com justiça se estabelece o trono.', nt: '1 Tm 2:1-2' },
-      { ref: 'Pv 20:28', text: 'Misericórdia e verdade guardam ao rei, e com piedade sustém ele o seu trono.', nt: '1 Pe 2:13-14' },
-      { ref: 'Pv 21:1',  text: 'Como ribeiros de águas, assim é o coração do rei na mão do Senhor; ele o inclina a todo o querer.', nt: 'Rm 13:1' },
-      { ref: 'Pv 25:2',  text: 'A glória de Deus é encobrir o negócio; mas a glória dos reis é esquadrinhá-lo.' },
-      { ref: 'Pv 29:2',  text: 'Quando os justos se engrandecem, o povo se alegra, mas quando o ímpio domina, o povo suspira.', nt: 'Mt 20:25-28' },
-      { ref: 'Pv 29:4',  text: 'O rei pela justiça estabelece a terra, mas o amigo de impostos a transtorna.', nt: '1 Tm 2:1-2' },
-      { ref: 'Pv 29:14', text: 'O rei, que julga os pobres conforme a verdade, firmará o seu trono para sempre.', nt: 'Tg 2:1-9' }
-    ]
-  },
-  {
-    id: 'bebida', numeral: 'XIII',
-    name: 'Bebida',
-    full: 'Bebida e Moderação',
-    subtitle: 'sobre o vinho e seus excessos',
-    color: '#6b1f3a',
-    verses: [
-      { ref: 'Pv 20:1',  text: 'O vinho é escarnecedor, a bebida forte alvoroçadora; e todo aquele que neles errar nunca será sábio.', nt: 'Ef 5:18' },
-      { ref: 'Pv 23:20-21', text: 'Não estejas entre os beberrões de vinho, nem entre os comilões de carne. Porque o beberrão e o comilão empobrecerão; e a sonolência faz trazer os vestidos rotos.', nt: 'Rm 13:13' },
-      { ref: 'Pv 23:29-30', text: 'Para quem são os ais? Para quem os pesares? Para quem as pelejas? Para quem as queixas? Para quem as feridas sem causa? E para quem os olhos vermelhos? Para os que se demoram perto do vinho.', nt: '1 Co 6:10' },
-      { ref: 'Pv 23:31-32', text: 'Não olhes para o vinho quando se mostra vermelho, quando resplandece no copo e se escoa suavemente. No seu fim morderá como a cobra, e como o basilisco picará.', nt: 'Lc 21:34' },
-      { ref: 'Pv 31:4-5', text: 'Não é dos reis, ó Lemuel, não é dos reis beber vinho, nem dos príncipes desejar bebida forte. Para que não bebam, e se esqueçam do estatuto, e pervertam o juízo de todos os aflitos.', nt: '1 Tm 3:3' }
-    ]
-  },
-  {
-    id: 'planejamento', numeral: 'XIV',
-    name: 'Planejamento',
-    full: 'Planejamento, Prudência e Conselho',
-    subtitle: 'sobre antecipar, calcular e ouvir',
+    id: 'prudencia', numeral: 'X',
+    name: 'Prudência',
+    full: 'Prudência e Liderança',
+    subtitle: 'sobre decidir, governar e antecipar',
     color: '#1f5d7a',
     verses: [
+      { ref: 'Pv 8:15-16', text: 'Por mim reinam os reis e os príncipes ordenam justiça. Por mim governam os príncipes e os nobres, sim, todos os juízes da terra.', nt: 'Rm 13:1-2' },
       { ref: 'Pv 13:16', text: 'Todo o prudente procede com conhecimento, mas o tolo espraia a sua loucura.', nt: 'Lc 14:28-30' },
       { ref: 'Pv 14:15', text: 'O simples dá crédito a cada palavra, mas o prudente atenta para os seus passos.', nt: '1 Ts 5:21' },
+      { ref: 'Pv 14:28', text: 'Na multidão do povo está a magnificência do rei, mas na falta do povo a perturbação do príncipe.' },
       { ref: 'Pv 15:22', text: 'Sem conselho os projetos se dissipam, mas com a multidão de conselheiros se confirmam.', nt: 'Lc 14:31' },
       { ref: 'Pv 16:3',  text: 'Confia ao Senhor as tuas obras, e teus pensamentos serão estabelecidos.', nt: '1 Pe 5:7' },
       { ref: 'Pv 16:9',  text: 'O coração do homem considera o seu caminho, mas o Senhor lhe dirige os passos.', nt: 'Tg 4:13-15' },
+      { ref: 'Pv 16:10', text: 'Nos lábios do rei se acha a sentença divina; em juízo não prevaricará a sua boca.', nt: 'Rm 13:1' },
+      { ref: 'Pv 16:12', text: 'Abominação é para os reis cometerem impiedade, porque com justiça se estabelece o trono.', nt: '1 Tm 2:1-2' },
       { ref: 'Pv 19:21', text: 'Muitos propósitos há no coração do homem, porém o conselho do Senhor permanecerá.', nt: 'At 5:38-39' },
       { ref: 'Pv 20:18', text: 'Cada propósito se confirma com conselho; faze, pois, a guerra com prudentes conselhos.', nt: 'Lc 14:31' },
+      { ref: 'Pv 20:28', text: 'Misericórdia e verdade guardam ao rei, e com piedade sustém ele o seu trono.', nt: '1 Pe 2:13-14' },
+      { ref: 'Pv 21:1',  text: 'Como ribeiros de águas, assim é o coração do rei na mão do Senhor; ele o inclina a todo o querer.', nt: 'Rm 13:1' },
       { ref: 'Pv 21:5',  text: 'Os pensamentos do diligente tendem só à abundância, porém os de todo apressado tendem só à pobreza.', nt: 'Tg 1:5' },
       { ref: 'Pv 22:3',  text: 'O prudente vê o mal e esconde-se, mas os simples passam e sofrem a pena.', nt: 'Mt 7:24-27' },
       { ref: 'Pv 24:27', text: 'Prepara fora a tua obra, e aparelha-a no campo, e depois edifica a tua casa.', nt: 'Lc 14:28' },
-      { ref: 'Pv 27:1',  text: 'Não te glories do dia de amanhã, porque não sabes o que produzirá o dia.', nt: 'Tg 4:13-14' }
-    ]
-  },
-  {
-    id: 'justo', numeral: 'XV',
-    name: 'Justiça',
-    full: 'O Justo e o Ímpio',
-    subtitle: 'sobre dois caminhos e dois destinos',
-    color: '#4a1f7a',
-    verses: [
-      { ref: 'Pv 10:3',  text: 'O Senhor não deixa ter fome a alma do justo, mas a fazenda dos ímpios rejeitará.', nt: 'Mt 6:33' },
-      { ref: 'Pv 10:24', text: 'O temor dos ímpios virá sobre ele, mas o desejo dos justos Deus lhe cumprirá.', nt: 'Mt 5:6' },
-      { ref: 'Pv 10:28', text: 'A esperança dos justos é alegria, mas a expectação dos ímpios perecerá.', nt: 'Rm 5:5' },
-      { ref: 'Pv 11:8',  text: 'O justo é libertado da angústia, e o ímpio vem em seu lugar.', nt: '2 Pe 2:9' },
-      { ref: 'Pv 11:30', text: 'O fruto do justo é árvore de vida, e o que ganha almas sábio é.', nt: 'Tg 5:20' },
-      { ref: 'Pv 12:7',  text: 'Transtornados serão os ímpios, e não serão mais, mas a casa dos justos permanecerá.', nt: 'Mt 7:24-27' },
-      { ref: 'Pv 13:9',  text: 'A luz dos justos alegra, mas a lâmpada dos ímpios se apagará.', nt: 'Mt 5:14-16' },
-      { ref: 'Pv 14:11', text: 'A casa dos ímpios se desfará, mas a tenda dos retos florescerá.', nt: 'Mt 7:24-27' },
-      { ref: 'Pv 14:34', text: 'A justiça exalta as nações, mas o pecado é o opróbrio dos povos.', nt: 'Mt 5:13' },
-      { ref: 'Pv 15:29', text: 'Longe está o Senhor dos ímpios, mas escuta a oração dos justos.', nt: 'Tg 5:16' }
+      { ref: 'Pv 25:2',  text: 'A glória de Deus é encobrir o negócio; mas a glória dos reis é esquadrinhá-lo.' },
+      { ref: 'Pv 27:1',  text: 'Não te glories do dia de amanhã, porque não sabes o que produzirá o dia.', nt: 'Tg 4:13-14' },
+      { ref: 'Pv 29:2',  text: 'Quando os justos se engrandecem, o povo se alegra, mas quando o ímpio domina, o povo suspira.', nt: 'Mt 20:25-28' },
+      { ref: 'Pv 29:4',  text: 'O rei pela justiça estabelece a terra, mas o amigo de impostos a transtorna.', nt: '1 Tm 2:1-2' },
+      { ref: 'Pv 29:14', text: 'O rei, que julga os pobres conforme a verdade, firmará o seu trono para sempre.', nt: 'Tg 2:1-9' }
     ]
   }
 ];

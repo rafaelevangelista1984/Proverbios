@@ -1,6 +1,6 @@
 # Provérbios — Os Pilares da Sabedoria
 
-> Um devocional digital que organiza o livro bíblico de Provérbios em 15 blocos temáticos ("pilares"), com versículo diário, referências cruzadas com o Novo Testamento e um diário pessoal de reflexões.
+> Um devocional digital que organiza o livro bíblico de Provérbios em 10 blocos temáticos ("pilares"), com versículo diário, referências cruzadas com o Novo Testamento e um diário pessoal de reflexões.
 
 **🔗 Acesse:** https://rafaelevangelista1984.github.io/Proverbios/
 
@@ -8,25 +8,20 @@
 
 ---
 
-## Os 15 Pilares
+## Os 10 Pilares
 
-| | Pilar | Verses |
+| | Pilar | Versículos |
 |---|---|---|
 | I | Temor do Senhor e Sabedoria | 12 |
 | II | Trabalho e Diligência | 13 |
 | III | Dinheiro, Riquezas e Generosidade | 12 |
-| IV | Filhos, Educação e Disciplina | 10 |
-| V | Casamento e Mulher Virtuosa | 10 |
-| VI | Pureza Sexual | 7 |
+| IV | Casamento e Fidelidade | 17 |
+| V | Filhos, Educação e Disciplina | 10 |
+| VI | A Língua e o Poder das Palavras | 12 |
 | VII | Amizades e Companhias | 9 |
-| VIII | A Língua e o Poder das Palavras | 12 |
-| IX | Orgulho e Humildade | 9 |
-| X | Ira e Autocontrole | 7 |
-| XI | Honestidade, Integridade e Justiça | 10 |
-| XII | Reis, Governo e Liderança | 10 |
-| XIII | Bebida e Moderação | 5 |
-| XIV | Planejamento, Prudência e Conselho | 11 |
-| XV | O Justo e o Ímpio | 10 |
+| VIII | Domínio Próprio | 21 |
+| IX | Integridade e Justiça | 20 |
+| X | Prudência e Liderança | 21 |
 
 Total: **147 versículos** organizados, **141 referências cruzadas** com o Novo Testamento.
 
@@ -40,6 +35,7 @@ Total: **147 versículos** organizados, **141 referências cruzadas** com o Novo
 - ✦ **Links para a Bíblia Online** — leia o capítulo inteiro com um toque
 - ✦ **Diário pessoal** — anote suas reflexões em cada versículo
 - ✦ **Exportação em JSON** — backup das suas anotações
+- ✦ **Lembrete de backup** — alerta automático quando faz tempo desde o último export
 - ✦ **Responsivo** — funciona bem em celular, tablet e desktop
 - ✦ **Offline-ready** — após o primeiro carregamento, funciona sem internet
 
